@@ -124,7 +124,7 @@ char* histogram_to_string(Histogram* hist_) {
     r = realloc(r, r_size * 2);
     r_size *= 2;
   }
-  strcat(r, "------------------------------------------------------\n");
+  strcat(r, "-HIST-------------------------------------------------\n");
   const double mult = 100.0 / hist_->num_;
   double sum = 0;
   for (int b = 0; b < kNumBuckets; b++) {
@@ -153,5 +153,6 @@ char* histogram_to_string(Histogram* hist_) {
       strcat(r, "#");
     strcat(r, "\n");
   }
+  strcat(r, "-END--------------------------------------------------\n");
   return r;
 }
